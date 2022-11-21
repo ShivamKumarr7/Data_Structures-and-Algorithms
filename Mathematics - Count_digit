@@ -1,0 +1,29 @@
+// Mathematics 
+// 1) Count Digits 
+
+#include<bits/stdc++.h>
+using namespace std;
+int fun1(int m)
+{
+    if(m == 0)return 1;
+    int ct = 0;
+    while(m > 0)
+    {
+        ct += 1;
+        m = m/10;
+    }
+    return ct;
+}
+int fun2(int n)
+{
+    string res = to_string(n);
+    return res.size();
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<fun1(n)<<"\n"; // method 1 
+    cout<<fun2(n)<<"\n"; // method 2 
+    return 0;
+}
