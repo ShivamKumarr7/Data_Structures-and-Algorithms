@@ -1,0 +1,27 @@
+// Mathematics 
+// Reverse number
+
+// Q) Given a number 'n' find and print its reverse.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int reverse_no(int n)
+{
+    if(n < 10)return n;
+    int rev = 0;
+    while(n > 0)
+    {
+        int last_digit = n % 10;
+        rev = (rev * 10) + last_digit;
+        n = n / 10;
+    }
+    return rev;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<reverse_no(n);
+    return 0;
+}
