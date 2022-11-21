@@ -1,0 +1,43 @@
+// Mathematics 
+// Palindrome Numbers 
+
+// Q) Given a number 'n' find whether the number is Palindrome or not ? 
+
+#include<bits/stdc++.h>
+using namespace std;
+bool is_palin1(int n)
+{
+    string original_string = to_string(n);
+    string reversed_string = original_string;
+    reverse(reversed_string.begin(),reversed_string.end());
+    if(original_string == reversed_string)return true;
+    else
+    return false;
+}
+bool is_palin2(int n)
+{
+    if(n <= 9)return true;
+    int ori = n;
+    int rev = 0;
+    int start = 0;
+    while(n > 0)
+    {
+        int last_digit = n % 10;
+        rev = rev + (last_digit * pow(10,start));
+        n = n / 10;
+        start += 1;
+    }
+    cout<<ori<<" "<<rev<<"\n";
+    if(rev == ori)return true;
+    return false;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    bool check1 = is_palin1(n);  // method 1 
+    check1 ? cout<<"Yes,it is a Palindrome\n" : cout<<"Not a Palindrome\n";
+    bool check2 = is_palin2(n); // method 2 
+    check2 ? cout<<"Yes,it is a Palindrome\n" : cout<<"Not a Palindrome\n";
+    return 0;
+}
