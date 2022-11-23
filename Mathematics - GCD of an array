@@ -1,0 +1,19 @@
+// Mathematics 
+// GCD of an array or a list of numbers
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[] = {5,25,75,10,20};
+    int n = 5;
+    // now need to find gcd of this array 
+    int gcd = arr[0];
+    for(int i=1;i<5;i++)
+    {
+        gcd = __gcd(gcd,arr[i]);
+    }
+    cout<<gcd<<"\n";
+    return 0;
+}
