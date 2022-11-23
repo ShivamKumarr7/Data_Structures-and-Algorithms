@@ -1,0 +1,17 @@
+// Mathematics
+// LCM of 2 numbers 
+
+
+// We know (a * b) = gcd(a,b) * lcm(a,b)
+// So, its better to find lcm of 2 numbers using this formula 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,b;
+    cin>>a>>b;
+    int lcm = (a*b) / __gcd(a,b);
+    cout<<lcm<<"\n";
+    return 0;
+}
