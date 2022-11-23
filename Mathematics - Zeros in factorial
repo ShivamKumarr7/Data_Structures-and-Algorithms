@@ -1,0 +1,21 @@
+// Mathematics 
+// Trailing zeros in factorial of a number 
+
+// A zero is obtained by multiplication of 2 and 5
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int ct = 0;
+    while(n > 4)
+    {
+        ct = ct + (n/5);
+        n = n / 5;
+    }
+    cout<<ct<<"\n";
+    return 0;
+}
