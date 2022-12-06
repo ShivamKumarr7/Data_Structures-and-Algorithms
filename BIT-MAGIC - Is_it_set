@@ -1,0 +1,37 @@
+// BIT-MAGIC 
+// Q) Check if kth bit is set or not ?? 
+
+#include<bits/stdc++.h>
+using namespace std;
+bool is_it_set(int n,int k)
+{
+    int ct = 1;
+    while(n)
+    {
+        if(n & 1)
+        {
+            if(ct == k)
+            {
+                return true;
+            }
+        }
+        n = n >> 1;
+        ct += 1;
+    }
+    return false;
+}
+int main()
+{
+    int n,k;
+    cin>>n>>k;
+    bool ans = is_it_set(n,k);
+    if(ans)
+    {
+        cout<<"It is set\n";
+    }
+    else
+    {
+        cout<<"Not set\n";
+    }
+    return 0;
+}
