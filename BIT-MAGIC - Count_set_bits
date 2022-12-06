@@ -1,0 +1,28 @@
+// BIT-MAGIC
+// Q) Count the number of set bits in an integer ? 
+
+#include<bits/stdc++.h>
+using namespace std;
+int count_set_bits(int n)
+{
+    int ct = 0;
+    while(n)
+    {
+        if(n & 1)
+        {
+            ct += 1;
+        }
+        n = n >> 1;
+    }
+    return ct;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int ans = count_set_bits(n);
+    cout<<ans<<"\n";
+    int direct_ans = __builtin_popcount(n);
+    cout<<direct_ans<<"\n";
+    return 0;
+}
