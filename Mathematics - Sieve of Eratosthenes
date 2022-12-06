@@ -1,0 +1,32 @@
+// Sieve of eratosthenes 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<bool>v(true,101);
+    v[0] = false;
+    v[1] = false;
+    for(int i=2;i<=sqrt(101);i++)
+    {
+        if(v[i])
+        {
+            for(int j=i*i;j<101;j=j+i)
+            {
+                v[j] = false;
+            }
+        }
+    }
+    // now print all prime numbers 
+    for(int i=0;i<101;i++)
+    {
+        if(v[i])
+        {
+            cout<<i<<" ";
+        }
+    }
+    cout<<"\n";
+    return 0;
+    // The time complexity of Sieve of Eratosthenes is n*log(log(n)) for a number 'n'. 
+    // The space complexity of SOE is O(n).
+}
