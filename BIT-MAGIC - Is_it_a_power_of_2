@@ -1,0 +1,32 @@
+// BIT-MAGIC 
+// Q) Given a number 'n' check if it is a power of 2 or not ?
+
+
+#include<bits/stdc++.h>
+using namespace std;
+bool is_power_of_2(int n)
+{
+    int ct = __builtin_popcount(n);
+    if(ct == 1)return true;
+    return false;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        bool ans = is_power_of_2(n);
+        if(ans)
+        {
+            cout<<"Yes,it is a power of 2\n";
+        }
+        else
+        {
+            cout<<"Not a power of 2\n";
+        }
+    }
+    return 0;
+}
