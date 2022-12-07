@@ -1,0 +1,30 @@
+// BIT-MAGIC
+// Q) Given a list of numbers in which all numbers appears even number of times except a number that 
+//    appears odd number of times. Find the number that appears odd number of times.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int find_odd_repeating_number(vector<int>v)
+{
+    int sizze = v.size();
+    int start = v[0];
+    for(int i=1;i<sizze;i++)
+    {
+        start = start ^ v[i];
+    }
+    return start;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int>v(n,0);
+    for(int i=0;i<n;i++)
+    {
+        cin>>v[i];
+    }
+    int res = find_odd_repeating_number(v);
+    cout<<res<<"\n";
+    return 0;
+}
